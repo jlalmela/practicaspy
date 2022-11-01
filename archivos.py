@@ -1,4 +1,12 @@
 #Trabajamos con lectura y escritura de archivos, ejemplo de encriptar y desencriptar un texto y guardarlo en un archivo
+#Crea el archivo texto.txt
+
+""" Si no existe el archivo texto.txt se puede crear de esta forma.
+import os
+file = open("texto.txt", "w")
+file.write("Hola Mundo" + os.linesep)
+file.close() 
+"""
 
 def encriptar(texto):
     textoFinal = ''
