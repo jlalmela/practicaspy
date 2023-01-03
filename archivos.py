@@ -1,5 +1,5 @@
-#Trabajamos con lectura y escritura de archivos, ejemplo de encriptar y desencriptar un texto y guardarlo en un archivo
-#Crea el archivo texto.txt
+# Trabajamos con lectura y escritura de archivos, ejemplo de encriptar y desencriptar un texto y guardarlo en un archivo
+# Crea el archivo texto.txt
 
 """ Si no existe el archivo texto.txt se puede crear de esta forma.
 import os
@@ -8,43 +8,50 @@ file.write("Hola Mundo" + os.linesep)
 file.close() 
 """
 
+
 def encriptar(texto):
     textoFinal = ''
     for letra in texto:
-        ascii = ord(letra) # convierte la letra en código ASCII
+        ascii = ord(letra)  # convierte la letra en código ASCII
         ascii += 1
-        textoFinal += chr(ascii) # hace lo inverso y convierte en letra el número
+        # hace lo inverso y convierte en letra el número
+        textoFinal += chr(ascii)
     return textoFinal
+
 
 def desencriptar(texto):
     textoFinal = ''
     for letra in texto:
-        ascii = ord(letra) # convierte la letra en código ASCII
+        ascii = ord(letra)  # convierte la letra en código ASCII
         ascii -= 1
-        textoFinal += chr(ascii) # hace lo inverso y convierte en letra el número
+        # hace lo inverso y convierte en letra el número
+        textoFinal += chr(ascii)
     return textoFinal
+
 
 def encriptarArchivo(rutaArchivo):
     archivo = open(rutaArchivo, 'r')
-    texto =archivo.read()
+    texto = archivo.read()
     archivo.close()
-    textoEncriptado= encriptar(texto)
+    textoEncriptado = encriptar(texto)
 
-    archivo = open(rutaArchivo, 'w') 
+    archivo = open(rutaArchivo, 'w')
     archivo.write(textoEncriptado)
     archivo.close()
     print('El archivo se encriptó correctamente')
 
+
 def desencriptarArchivo(rutaArchivo):
-    archivo= open(rutaArchivo, 'r')
+    archivo = open(rutaArchivo, 'r')
     texto = archivo.read()
     archivo.close()
-    textoDesencriptado= desencriptar(texto)
+    textoDesencriptado = desencriptar(texto)
 
     archivo = open(rutaArchivo, 'w')
     archivo.write(textoDesencriptado)
     archivo.close()
     print('El archivo se desencripto correctamente')
+
 
 respuestaEoD = input('Presione "E" para enciptar o "D" para desencriptar: ')
 
@@ -56,4 +63,3 @@ elif respuestaEoD == "D" or respuestaEoD == "d":
     desencriptarArchivo(rutaArchivo)
 else:
     print('No ha escrito E o D correctamente vuelva a intentarlo')
-
