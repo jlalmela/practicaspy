@@ -1,3 +1,4 @@
+
 """ 
     Varibales y constantes
     ----------------------

@@ -12,4 +12,4 @@ def calDescuento(precio, descuento):
 
 calDescuento(impProducto, desProducto)
 
-print("El descuento para " + nomProducto + " es de "+ str(calDescuento(impProducto, desProducto)))
+print("El descuento para " + nomProducto + " es de "+ str(calDescuento(impProducto, desProducto))+" %")
